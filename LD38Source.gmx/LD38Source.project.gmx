@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\s_Player</sprite>
+    <sprite>sprites\s_House</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -14,6 +15,9 @@
     <scripts name="Game Scripts">
       <script>scripts\room_init.gml</script>
       <script>scripts\game_init.gml</script>
+      <script>scripts\director_init.gml</script>
+      <script>scripts\director_step.gml</script>
+      <script>scripts\debug_draw.gml</script>
     </scripts>
     <scripts name="Planet Scripts">
       <script>scripts\planet_init.gml</script>
@@ -25,10 +29,16 @@
       <script>scripts\player_step.gml</script>
       <script>scripts\player_draw.gml</script>
     </scripts>
+    <scripts name="Object Scripts">
+      <script>scripts\house_init.gml</script>
+      <script>scripts\house_step.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\director</object>
     <object>objects\o_Planet</object>
     <object>objects\o_Player</object>
+    <object>objects\o_House</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\game</room>
