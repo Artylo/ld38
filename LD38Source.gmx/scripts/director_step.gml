@@ -20,6 +20,10 @@ if(keyboard_check_pressed(ord('P')) and keyboard_check(vk_space))
     if(global.pp_camera) global.pp_camera = false;
     else global.pp_camera = true;
 }
+if(keyboard_check_pressed(ord('R')) and keyboard_check(vk_space))
+{
+    game_restart();
+}
 
 view_xview = o_Player.x - view_wview/2;
 view_yview = o_Player.y - view_hview/2;

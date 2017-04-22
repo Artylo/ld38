@@ -8,6 +8,9 @@
   <sprites name="sprites">
     <sprite>sprites\s_Player</sprite>
     <sprite>sprites\s_House</sprite>
+    <sprite>sprites\s_Tree</sprite>
+    <sprite>sprites\s_Tools</sprite>
+    <sprite>sprites\s_Grass</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,13 +35,21 @@
     <scripts name="Object Scripts">
       <script>scripts\house_init.gml</script>
       <script>scripts\house_step.gml</script>
+      <script>scripts\tree_init.gml</script>
+      <script>scripts\tree_step.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader_RGB.shader</shader>
+    <shader type="GLSLES">shaders\shader_inverse.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\director</object>
     <object>objects\o_Planet</object>
     <object>objects\o_Player</object>
     <object>objects\o_House</object>
+    <object>objects\o_Trees</object>
+    <object>objects\o_Tools</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\game</room>

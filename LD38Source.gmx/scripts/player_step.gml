@@ -21,7 +21,7 @@ if(iNULL)
     image_speed = 0;
     image_index = 0;
 }
-else image_speed = 0.1;
+else image_speed = 0.15;
 if(direction >= 360) direction -= 360;
 if(direction < 0)    direction += 360;
 
@@ -31,3 +31,35 @@ y = player_current_planet.y + lengthdir_y(player_current_planet.planet_surface_r
 
 //Player Animation
 image_angle = point_direction(x,y,player_current_planet.x,player_current_planet.y)+90;
+
+/*TOOLS*/
+if(mouse_check_button(mb_left))
+{
+    tool_dir_to_mouse = point_distance(x,y,mouse_x,mouse_y)-view_angle;
+    if(image_xscale = -1)
+    {
+        tool_dir += tool_speed;
+        tool_xscale = -1;
+        tool_x = x;
+        tool_y = y;
+        player_speed = 20; 
+    }
+    else
+    {
+        tool_dir -= tool_speed;
+        tool_xscale = 1;
+        tool_x = x;
+        tool_y = y;
+        player_speed = 20;
+    }
+}
+else
+{
+    player_speed = 10;
+}
+if(tool_dir >= 360) tool_dir -= 360;
+if(tool_dir < 0) tool_dir += 360;
+
+
+
+
