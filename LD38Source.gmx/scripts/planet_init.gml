@@ -12,6 +12,7 @@ repeat(trees)
     var pY = y + lengthdir_y(planet_surface_radius,dir);
     with (instance_create(pX,pY,o_Trees))
     {
+        direction = dir;
         current_planet = other.id;
         x = other.x + lengthdir_x(other.planet_surface_radius,dir);
         y = other.y + lengthdir_y(other.planet_surface_radius,dir);

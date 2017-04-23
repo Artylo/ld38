@@ -2,7 +2,7 @@ randomize();
 game_init();
 instance_create(0,0,director);
 
-instance_create(room_width/2, room_height/2, o_Planet);
+global.first = instance_create(room_width/2, room_height/2, o_Planet);
 
 if(instance_exists(o_Planet))
 {
@@ -19,14 +19,32 @@ if(instance_exists(o_Planet))
     o_House.current_planet = first_planet;
 }
 
-repeat(50)
+
+var inst, oinst;
+repeat(100)
 {
-    with (instance_create(irandom(room_width), irandom(room_height), o_Planet))
+    inst = instance_create(irandom(room_width), irandom(room_height), o_Planet);
+    if(instance_exists(inst))
     {
-        for(var i = 0; i < instance_number(o_Planet); i++)
+        if(point_distance(first_planet.x,first_planet.y,inst.x,inst.y) < first_planet.planet_size*first_planet.planet_size_mod + inst.planet_size*inst.planet_size_mod)
+        {   
+            with inst
+            {
+                instance_destroy();
+            }
+        }
+    }
+}
+
+for(var i = 0; i < instance_number(o_Planet)-1; i++)
+{
+    inst  = instance_find(o_Planet,i);
+    oinst = instance_find(o_Planet,i+1);
+    if(instance_exists(inst) and instance_exists(oinst))
+    {
+        if(point_distance(oinst.x,oinst.y,inst.x,inst.y) < oinst.planet_size*oinst.planet_size_mod + inst.planet_size*inst.planet_size_mod)
         {
-            var inst = instance_find(o_Planet,i);
-            if(point_distance(x,y,inst.x,inst.y) < planet_size*planet_size_mod + inst.planet_size*inst.planet_size_mod)
+            with(inst)
             {
                 instance_destroy();
             }

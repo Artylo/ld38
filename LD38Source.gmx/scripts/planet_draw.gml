@@ -16,3 +16,11 @@ for(var i = 0; i< planet_grass; i++)
 
 draw_circle(x,y,planet_size*planet_size_mod,false);
 //draw_circle(x,y,planet_surface_radius,true);
+
+//draw_line(x,y,global.first.x,global.first.y);
+
+draw_set_colour(c_black);
+draw_set_valign(fa_middle);
+draw_set_halign(fa_center);
+draw_text_transformed(x,y,string(id),4,4,0);
+draw_set_colour(c_white);

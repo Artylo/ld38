@@ -3,6 +3,8 @@
 //Player Input
 iL = keyboard_check(vk_left) or keyboard_check(ord('A'));
 iR = keyboard_check(vk_right) or keyboard_check(ord('D'));
+iU = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord('W'));
+iD = keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord('S'));
 iNULL = !iL and !iR;
 
 //Player Movement
@@ -26,11 +28,16 @@ if(direction >= 360) direction -= 360;
 if(direction < 0)    direction += 360;
 
 //Player Position
-x = player_current_planet.x + lengthdir_x(player_current_planet.planet_surface_radius,direction);
-y = player_current_planet.y + lengthdir_y(player_current_planet.planet_surface_radius,direction);
+if(player_current_planet != noone)
+{
+    x = player_current_planet.x + lengthdir_x(player_current_planet.planet_surface_radius,direction);
+    y = player_current_planet.y + lengthdir_y(player_current_planet.planet_surface_radius,direction);
+}
 
 //Player Animation
-image_angle = point_direction(x,y,player_current_planet.x,player_current_planet.y)+90;
+if(player_current_planet != noone) image_angle = point_direction(x,y,player_current_planet.x,player_current_planet.y)+90;
+//else image_angle = point_direction(x,y,instance_nearest(x,y,o_Planet).x,instance_nearest(x,y,o_Planet).y)+90;
+else image_angle = direction-90;
 
 /*TOOLS*/
 if(mouse_check_button(mb_left))
@@ -60,5 +67,35 @@ else
 if(tool_dir >= 360) tool_dir -= 360;
 if(tool_dir < 0) tool_dir += 360;
 
+//Planet Jumping
+var nier = instance_nth_nearest(x,y,o_Planet,2);
+if(iU) and (player_current_planet != noone)
+{
+    player_current_planet = noone;
+    motion_add(-image_angle-90,1);
+}
+if(iD) and (player_current_planet == noone)
+{
+    if(!player_landing)
+    {
+        nier = instance_nearest(x,y,o_Planet);
+        motion_add(point_direction(x,y,nier.x,nier.y),1);
+        player_landing = true;
+    }
+}
+if(!player_surfaced) and (player_landing)
+{
+    if(point_distance(x,y,nier.x,nier.y) < nier.planet_surface_radius)
+    {
+        player_current_planet = nier;
+        player_surfaced = true;
+        player_landing  = false;
+    }
+    else
+    {
+        direction = point_direction(x,y,nier.x,nier.y);
+        image_angle = direction+180;
+    }
+}
 
 

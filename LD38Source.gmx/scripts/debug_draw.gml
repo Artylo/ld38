@@ -11,6 +11,7 @@ debug[3] = "ppCam: " + string(global.pp_camera);
 debug[4] = "Player2Mouse: " + string(point_distance(o_Player.x,o_Player.y,mouse_x,mouse_y));
 debug[5] = "ViewAngle: " + string(view_angle);
 debug[6] = "GrassNum: " + string(o_Planet.planet_grass);
+debug[7] = "PlanetsNum: " + string(instance_number(o_Planet));
 
 if(keyboard_check(vk_space))
 {
@@ -19,4 +20,3 @@ if(keyboard_check(vk_space))
         draw_text(view_wview,16*i,debug[i]);
     }
 }
-

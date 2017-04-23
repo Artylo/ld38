@@ -1,6 +1,8 @@
 /// Player Init
 
 player_speed = 10;
+player_surfaced = true;
+player_landing = false;
 
 tool = 0;
 tool_dir = 0;

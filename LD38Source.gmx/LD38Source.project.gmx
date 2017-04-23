@@ -11,6 +11,7 @@
     <sprite>sprites\s_Tree</sprite>
     <sprite>sprites\s_Tools</sprite>
     <sprite>sprites\s_Grass</sprite>
+    <sprite>sprites\s_Zombie</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,7 +21,9 @@
       <script>scripts\game_init.gml</script>
       <script>scripts\director_init.gml</script>
       <script>scripts\director_step.gml</script>
+      <script>scripts\director_draw.gml</script>
       <script>scripts\debug_draw.gml</script>
+      <script>scripts\instance_nth_nearest.gml</script>
     </scripts>
     <scripts name="Planet Scripts">
       <script>scripts\planet_init.gml</script>
@@ -49,7 +52,6 @@
     <object>objects\o_Player</object>
     <object>objects\o_House</object>
     <object>objects\o_Trees</object>
-    <object>objects\o_Tools</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\game</room>
