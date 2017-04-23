@@ -7,4 +7,3 @@ global.gameWidth = 360;
 global.gameHeight = 640;
 global.zoom = 1.5;
 
-

@@ -22,4 +22,3 @@ repeat(trees)
 
 //Grass
 planet_grass = round(planet_size*planet_size_mod*2*3.14/32);
-
