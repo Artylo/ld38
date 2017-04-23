@@ -17,7 +17,7 @@ repeat(trees)
         x = other.x + lengthdir_x(other.planet_surface_radius,dir);
         y = other.y + lengthdir_y(other.planet_surface_radius,dir);
         image_angle = point_direction(other.x,other.y,x,y)-90;
-        depth = choose(1,0,-1);
+        //depth = choose(1,0,-1);
     }
 }
 
@@ -34,3 +34,8 @@ life_frame_speed = 0.1;
 life_x = x + lengthdir_x(planet_surface_radius,life_dir);
 life_y = y + lengthdir_y(planet_surface_radius,life_dir);
 life_angle = point_direction(life_x,life_y,x,y)+90;
+life_speak = false;
+life_text = "";
+
+life_sound_timer_max = irandom_range(10,20)*room_speed;
+life_sound_timer = life_sound_timer_max;

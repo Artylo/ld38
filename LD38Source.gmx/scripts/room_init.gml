@@ -22,7 +22,7 @@ if(instance_exists(o_Planet))
 
 
 var inst, oinst;
-repeat(100)
+repeat(5)
 {
     inst = instance_create(irandom(room_width), irandom(room_height), o_Planet);
     if(instance_exists(inst))

@@ -6,6 +6,9 @@ view_hview = global.gameHeight;
 display_set_gui_size(global.gameWidth, global.gameHeight);
 room_speed = 60;
 
+//Logo
+logo_alpha = 1;
+
 //Day and Night
 sun_rising = false;
 sun_orbit_speed = 2/room_speed;

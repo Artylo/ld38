@@ -4,7 +4,27 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Music">
+      <sound>sound\m6</sound>
+      <sound>sound\m5</sound>
+      <sound>sound\m4</sound>
+      <sound>sound\m3</sound>
+      <sound>sound\m2</sound>
+      <sound>sound\m1</sound>
+    </sounds>
+    <sounds name="SEX">
+      <sound>sound\step</sound>
+      <sound>sound\step2</sound>
+      <sound>sound\w1</sound>
+      <sound>sound\w2</sound>
+      <sound>sound\w3</sound>
+      <sound>sound\w4</sound>
+      <sound>sound\w5</sound>
+      <sound>sound\w6</sound>
+      <sound>sound\w7</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_Player</sprite>
     <sprite>sprites\s_House</sprite>
@@ -12,6 +32,7 @@
     <sprite>sprites\s_Tools</sprite>
     <sprite>sprites\s_Grass</sprite>
     <sprite>sprites\s_Zombie</sprite>
+    <sprite>sprites\s_Logo</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +46,7 @@
       <script>scripts\debug_draw.gml</script>
       <script>scripts\instance_nth_nearest.gml</script>
       <script>scripts\draw_text_outline.gml</script>
+      <script>scripts\draw_text_outline_ext.gml</script>
     </scripts>
     <scripts name="Planet Scripts">
       <script>scripts\planet_init.gml</script>

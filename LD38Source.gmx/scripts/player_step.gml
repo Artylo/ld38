@@ -23,7 +23,16 @@ if(iNULL)
     image_speed = 0;
     image_index = 0;
 }
-else image_speed = 0.15;
+else
+{
+    image_speed = 0.15;
+    if(player_sound_timer > 0) player_sound_timer--;
+    else
+    {
+        audio_play_sound(choose(step,step2),0,false);
+        player_sound_timer = player_sound_timer_max;
+    }
+}
 if(direction >= 360) direction -= 360;
 if(direction < 0)    direction += 360;
 

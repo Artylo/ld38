@@ -22,8 +22,14 @@ draw_circle(x,y,planet_size*planet_size_mod,false);
 draw_set_colour(c_black);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
-draw_text_transformed(x,y,string(id),4,4,0);
+draw_text_transformed(x,y,string(id),planet_size,planet_size,0);
 draw_set_colour(c_white);
 
 //Draw Life
 draw_sprite_ext(s_Player,life_frame,life_x,life_y,life_move_left*-1,1,life_angle,c_white,1);
+if(life_speak)
+{
+    draw_set_valign(fa_bottom);
+    draw_set_halign(fa_center);
+    draw_text_outline_ext(x+lengthdir_x(planet_surface_radius+16,life_dir),y+lengthdir_y(planet_surface_radius+16,life_dir),life_text,c_black,2,1,1,life_angle);
+}

@@ -4,6 +4,9 @@ player_speed = 10;
 player_surfaced = true;
 player_landing = false;
 
+player_sound_timer_max = room_speed/2;
+player_sound_timer = player_sound_timer_max;
+
 tool = 0;
 tool_dir = 0;
 tool_speed = 10;
