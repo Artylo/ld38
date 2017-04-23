@@ -11,6 +11,7 @@ if(instance_exists(o_Planet))
     var pY = first_planet.y + lengthdir_y(first_planet.planet_surface_radius,90);
     instance_create(pX,pY,o_Player);
     o_Player.player_current_planet = first_planet;
+    o_Player.direction = 90;
     
     var pX = first_planet.x + lengthdir_x(first_planet.planet_surface_radius,irandom(360));
     var pY = first_planet.y + lengthdir_y(first_planet.planet_surface_radius,irandom(360));

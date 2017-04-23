@@ -24,3 +24,6 @@ draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 draw_text_transformed(x,y,string(id),4,4,0);
 draw_set_colour(c_white);
+
+//Draw Life
+draw_sprite_ext(s_Player,life_frame,life_x,life_y,life_move_left*-1,1,life_angle,c_white,1);

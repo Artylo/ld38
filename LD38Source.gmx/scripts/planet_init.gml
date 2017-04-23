@@ -23,3 +23,14 @@ repeat(trees)
 
 //Grass
 planet_grass = round(planet_size*planet_size_mod*2*3.14/32);
+
+//Simulate Life
+life_dir = irandom(360);
+life_moving = true;
+life_timer = irandom(10)*room_speed;
+life_move_left = choose(-1,1);
+life_frame = 0;
+life_frame_speed = 0.1;
+life_x = x + lengthdir_x(planet_surface_radius,life_dir);
+life_y = y + lengthdir_y(planet_surface_radius,life_dir);
+life_angle = point_direction(life_x,life_y,x,y)+90;

@@ -17,6 +17,6 @@ if(keyboard_check(vk_space))
 {
     for(var i = 0; i < array_length_1d(debug); i++)
     {
-        draw_text(view_wview,16*i,debug[i]);
+        draw_text_outline(view_wview,16*i,debug[i],c_black,2);
     }
 }

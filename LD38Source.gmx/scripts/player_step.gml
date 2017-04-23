@@ -28,11 +28,11 @@ if(direction >= 360) direction -= 360;
 if(direction < 0)    direction += 360;
 
 //Player Position
-if(player_current_planet != noone)
-{
+//if(player_current_planet != noone) and (!player_surfaced) and (player_landing)
+//{
     x = player_current_planet.x + lengthdir_x(player_current_planet.planet_surface_radius,direction);
     y = player_current_planet.y + lengthdir_y(player_current_planet.planet_surface_radius,direction);
-}
+//}
 
 //Player Animation
 if(player_current_planet != noone) image_angle = point_direction(x,y,player_current_planet.x,player_current_planet.y)+90;
@@ -68,6 +68,7 @@ if(tool_dir >= 360) tool_dir -= 360;
 if(tool_dir < 0) tool_dir += 360;
 
 //Planet Jumping
+/*
 var nier = instance_nth_nearest(x,y,o_Planet,2);
 if(iU) and (player_current_planet != noone)
 {
@@ -79,15 +80,18 @@ if(iD) and (player_current_planet == noone)
     if(!player_landing)
     {
         nier = instance_nearest(x,y,o_Planet);
-        motion_add(point_direction(x,y,nier.x,nier.y),1);
+        motion_add(point_direction(x,y,nier.x,nier.y),2);
         player_landing = true;
     }
 }
 if(!player_surfaced) and (player_landing)
 {
+    nier = instance_nearest(x,y,o_Planet);
     if(point_distance(x,y,nier.x,nier.y) < nier.planet_surface_radius)
     {
         player_current_planet = nier;
+        x = player_current_planet.x + lengthdir_x(player_current_planet.planet_surface_radius,direction);
+        y = player_current_planet.y + lengthdir_y(player_current_planet.planet_surface_radius,direction);
         player_surfaced = true;
         player_landing  = false;
     }
@@ -97,5 +101,6 @@ if(!player_surfaced) and (player_landing)
         image_angle = direction+180;
     }
 }
+*/
 
 
